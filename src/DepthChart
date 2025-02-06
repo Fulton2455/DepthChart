@@ -1,0 +1,197 @@
+import components.Set.Set1L;
+import components.Stack.Stack1L;
+import components.Map.Map1L;
+
+
+public class DepthChart{
+    private Map<String, Stack<String>> rep;
+
+    /**
+     * Starting with doing depth charts with
+     * multiple sports but considering only focusing
+     * on one sport like football because then I can create
+     * methods to print the starting lineups with particular
+     * personels or other interesting things but unsure as of now.
+     * Would fix any confusion regarding a no-argument constructor as well.
+     */
+
+    /**
+     * No argument Constructor creates
+     * arbitrary depth chart with 3 positions
+     */
+    /**
+    public DepthChart(){
+        this.rep = new Set1L();
+        Stack<String> one = new Stack1L<>();
+        Stack<String> two = new Stack1L<>();
+        Stack<String> three = new Stack1L<>();
+        this.rep.add(one);
+        this.rep.add(two);
+        this.rep.add(three);
+    }
+*/
+    //Will simply make no argument constructor if I go with
+    //only football
+    public DepthChart("football"){
+        this.rep = new Map1L();
+        Stack<String> qb = new Stack1L<>();
+        this.rep.add("qb", qb);
+        Stack<String> hb = new Stack1L<>();
+        this.rep.add("hb", hb);
+        Stack<String> fb = new Stack1L<>();
+        this.rep.add("fb", fb);
+        Stack<String> wr = new Stack1L<>();
+        this.rep.add("wr", wr);
+        Stack<String> te = new Stack1L<>();
+        this.rep.add("te", te);
+        Stack<String> ot = new Stack1L<>();
+        this.rep.add("ot", ot);
+        Stack<String> og = new Stack1L<>();
+        this.rep.add("og", og);
+        Stack<String> c = new Stack1L<>();
+        this.rep.add("c", c);
+        Stack<String> dt = new Stack1L<>();
+        this.rep.add("dt", dt);
+        Stack<String> de = new Stack1L<>();
+        this.rep.add("de", de);
+        Stack<String> ilb = new Stack1L<>();
+        this.rep.add("ilb", ilb);
+        Stack<String> olb = new Stack1L<>();
+        this.rep.add("olb", olb);
+        Stack<String> cb = new Stack1L<>();
+        this.rep.add("cb", cb);
+        Stack<String> fs = new Stack1L<>();
+        this.rep.add("fs", fs);
+        Stack<String> ss = new Stack1L<>();
+        this.rep.add("ss", ss);
+        Stack<String> k = new Stack1L<>();
+        this.rep.add("k", k);
+        Stack<String> p = new Stack1L<>();
+        this.rep.add("p", p);
+        Stack<String> ls = new Stack1L<>();
+        this.rep.add("ls", ls);
+
+
+    }
+
+    /**public DepthChart("basketball"){
+        this.rep = new Set1L();
+        Stack<String> pg = new Stack1L<>();
+        Stack<String> sg = new Stack1L<>();
+        Stack<String> sf = new Stack1L<>();
+        Stack<String> pf = new Stack1L<>();
+        Stack<String> c = new Stack1L<>();
+
+        this.rep.add(pg);
+        this.rep.add(sg);
+        this.rep.add(sf);
+        this.rep.add(pf);
+        this.rep.add(c);
+    }
+
+    public DepthChart("baseball"){
+        this.rep = new Set1L();
+        Stack<String> sp = new Stack1L<>();
+        Stack<String> rp = new Stack1L<>();
+        Stack<String> c = new Stack1L<>();
+        Stack<String> first = new Stack1L<>();
+        Stack<String> second = new Stack1L<>();
+        Stack<String> short = new Stack1L<>();
+        Stack<String> third = new Stack1L<>();
+        Stack<String> left = new Stack1L<>();
+        Stack<String> center = new Stack1L<>();
+        Stack<String> right = new Stack1L<>();
+
+        this.rep.add(sp);
+        this.rep.add(rp);
+        this.rep.add(c);
+        this.rep.add(first);
+        this.rep.add(second);
+        this.rep.add(short);
+        this.rep.add(third);
+        this.rep.add(left);
+        this.rep.add(center);
+        this.rep.add(right);
+    }
+>*/
+    /**
+     * Adds the player to the position (Kernel)
+     */
+    public final void addPlayer(String player, String position){
+        Stack<String> positionStack = this.rep.value(position);
+        positionStack.push(player);
+    }
+
+    /**
+     * Removes the player from the position (Kernel)
+     */
+    public final String removePlayer(String position){
+        Stack<String> positionStack = this.rep.value(position);
+        String player = positionStack.pop();
+        return player;
+    }
+
+    /**
+     * Returns the size of one position (Kernel)
+     */
+    public final int numPosition(String position){
+        Stack<String> positionStack = this.rep.value(position);
+        return positionStack.length();
+    }
+
+    /**
+     * Returns the size of the whole roster (Probably Not Kernel)
+     */
+    public final int numPlayers(){
+        for(Map.Pair<String, Stack<String>> x : this.rep){
+        int totalPlayers = 0;
+        totalPlayers += numPosition(x.key());
+        }
+        return totalPlayers;
+    }
+    /**
+     * Main Method
+     */
+    public static void main(String[] args){
+
+        /**
+         * Create a depth chart and give it players
+         * Consider a new way to add players in bulk because
+         * this is very tedious, perhaps input a String array
+         * and have it insert all of those names into a position
+         * Also consider building an iterator for DepthChart
+         */
+        DepthChart myTeam = new DepthChart("football");
+        myTeam.addPlayer("Caleb Williams", "qb");
+        myTeam.addPlayer("D'andre Swift", "rb");
+        myTeam.addPlayer("DJ Moore", "wr");
+        myTeam.addPlayer("Keenan Allen", "wr");
+        myTeam.addPlayer("Rome Odunze", "wr");
+        myTeam.addPlayer("Cole Kmet", "te");
+        myTeam.addPlayer("Larry Borom", "ot");
+        myTeam.addPlayer("Teven Jenkins", "og");
+        myTeam.addPlayer("Coleman Shelton", "c");
+        myTeam.addPlayer("Matt Pryor", "og");
+        myTeam.addPlayer("Darnell Wright", "ot");
+        myTeam.addPlayer("Montez Sweat", "de");
+        myTeam.addPlayer("Zacch Pickens", "dt");
+        myTeam.addPlayer("Gervon Dexter", "dt");
+        myTeam.addPlayer("Demarcus Walker", "de");
+        myTeam.addPlayer("TJ Edwardst", "olb");
+        myTeam.addPlayer("Tremaine Edmunds", "ilb");
+        myTeam.addPlayer("Jack Sanborn", "olb");
+        myTeam.addPlayer("Jaylon Johnson", "cb");
+        myTeam.addPlayer("Tyrique Stevenson", "cb");
+        myTeam.addPlayer("Kyler Gordon", "cb");
+        myTeam.addPlayer("Kevin Byard", "fs");
+        myTeam.addPlayer("Jaquan Brisker", "ss");
+        myTeam.addPlayer("Cairo Santos", "k");
+        myTeam.addPlayer("Tory Taylor", "p");
+        myTeam.addPlayer("Scott Daly", "ls");
+
+        //Check to see if position sizes and total size is working
+        System.out.println(myTeam.numPosition("wr"));
+        System.out.println(myTeam.numPosition("qb"));
+        System.out.println(myTeam.numPlayers());
+    }
+}
