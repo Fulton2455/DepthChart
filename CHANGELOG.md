@@ -76,3 +76,16 @@ the following form: YYYY.0M.0D.
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07
+
+## [2024.01.31]
+
+- Completed component brainstorming
+
+## [2025.02.20]
+
+- Completed component proof-of-concept
+- Added a DepthChart.java class to prove the functionality of a DepthChart
+component
+- Made addPlayer, removePlayer, numPosition, and an iterator for the component
+- Proved functionality by creating a team and then printing the first player at
+each position to show that the starting lineup could be printed
