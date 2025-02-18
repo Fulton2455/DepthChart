@@ -87,7 +87,7 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
 
     /**
      * Custom iterator that prints in alphabetical order of positions.
-    */
+     */
     @Override
     public Iterator<Map.Entry<String, Stack<String>>> iterator() {
         List<Map.Entry<String, Stack<String>>> sortedEntries = new ArrayList<>(
@@ -101,16 +101,16 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
     }
 
     /**
-     *  Returns the size of the whole roster (Probably Not Kernel).
+     * Returns the size of the whole roster (Probably Not Kernel).
      */
-     public final int numPlayers() {
+    public final int numPlayers() {
         int totalPlayers = 0;
-        for (Map.Pair<String, Stack<String>> x :this.rep) {
-            int totalPlayers = 0;
-            totalPlayers += this.numPosition(x.key());
+        for (Map.Entry<String, Stack<String>> x : this) {
+            totalPlayers += this.numPosition(x.getKey());
         }
         return totalPlayers;
     }
+
     /**
      * Main Method.
      *
@@ -160,6 +160,7 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
         System.out.println(wrOnes);
         System.out.println(myTeam.numPosition("wr"));
         myTeam.addPlayer(wrOnes, "wr");
+        System.out.println(myTeam.numPlayers());
         /**
          * //code for printing the starting lineup a secondary method //sure to
          * be included should really build an iterator to help with this
@@ -194,5 +195,4 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
             entry.getValue().push(player);
         }
     }
-}   }
 }
