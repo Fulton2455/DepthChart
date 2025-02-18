@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## 2025.02.20
+
+### Added
+
+- Designed a proof of concept for Depth Chart component
+
+### Updated
+
+- Changed design to include addPlayer, removePlayer, numPosition, numPlayers, and iterable methods
+
 ## [Unreleased]
 
 ## [2024.12.30]
@@ -72,16 +82,6 @@ the following form: YYYY.0M.0D.
 - Created a README at the root to explain how to use the template repo
 - Created initial drafts of the six portfolio assessments
 - Added READMEs to key folders like `test` and `lib` to explain their purpose
-
-## 2025.02.20
-
-### Added
-
-- Designed a proof of concept for Depth Chart component
-
-### Updated
-
-- Changed design to include addPlayer, removePlayer, numPosition, numPlayers, and iterable methods
 
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
