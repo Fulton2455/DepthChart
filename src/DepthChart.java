@@ -107,7 +107,7 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
         int totalPlayers = 0;
         for (Map.Pair<String, Stack<String>> x :this.rep) {
             int totalPlayers = 0;
-            totalPlayers += numPosition(x.key());
+            totalPlayers += this.numPosition(x.key());
         }
         return totalPlayers;
     }
@@ -194,4 +194,5 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
             entry.getValue().push(player);
         }
     }
+}   }
 }
