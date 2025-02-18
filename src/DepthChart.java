@@ -17,24 +17,8 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
     private Map<String, Stack<String>> rep;
 
     /**
-     * Starting with doing depth charts with multiple sports but considering
-     * only focusing on one sport like football because then I can create
-     * methods to print the starting lineups with particular personels or other
-     * interesting things but unsure as of now. Would fix any confusion
-     * regarding a no-argument constructor as well.
+     * Constructor creates an empty depth chart.
      */
-
-    /**
-     * No argument Constructor creates arbitrary depth chart with 3 positions
-     */
-    /**
-     * public DepthChart(){. this.rep = new Set1L(); Stack<String> one = new
-     * Stack1L<>(); Stack<String> two = new Stack1L<>(); Stack<String> three =
-     * new Stack1L<>(); this.rep.add(one); this.rep.add(two);
-     * this.rep.add(three); }
-     */
-    //Will simply make no argument constructor if I go with
-    //only football
     public DepthChart() {
         this.rep = new HashMap<String, Stack<String>>();
         Stack<String> qb = new Stack<>();
@@ -77,28 +61,7 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
     }
 
     /**
-     * public DepthChart("basketball"){ this.rep = new Set1L(); Stack<String> pg
-     * = new Stack1L<>(); Stack<String> sg = new Stack1L<>(); Stack<String> sf =
-     * new Stack1L<>(); Stack<String> pf = new Stack1L<>(); Stack<String> c =
-     * new Stack1L<>();
-     *
-     * this.rep.add(pg); this.rep.add(sg); this.rep.add(sf); this.rep.add(pf);
-     * this.rep.add(c); }
-     *
-     * public DepthChart("baseball"){ this.rep = new Set1L(); Stack<String> sp =
-     * new Stack1L<>(); Stack<String> rp = new Stack1L<>(); Stack<String> c =
-     * new Stack1L<>(); Stack<String> first = new Stack1L<>(); Stack<String>
-     * second = new Stack1L<>(); Stack<String> short = new Stack1L<>();
-     * Stack<String> third = new Stack1L<>(); Stack<String> left = new
-     * Stack1L<>(); Stack<String> center = new Stack1L<>(); Stack<String> right
-     * = new Stack1L<>();
-     *
-     * this.rep.add(sp); this.rep.add(rp); this.rep.add(c); this.rep.add(first);
-     * this.rep.add(second); this.rep.add(short); this.rep.add(third);
-     * this.rep.add(left); this.rep.add(center); this.rep.add(right); } >
-     */
-    /**
-     * Adds the player to the position (Kernel)
+     * Adds the player to the position (Kernel).
      */
     public final void addPlayer(String player, String position) {
         Stack<String> positionStack = this.rep.get(position);
@@ -122,25 +85,32 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
         return positionStack.size();
     }
 
-    // Custom iterator that prints in alphabetical order of positions
+    /**
+     * Custom iterator that prints in alphabetical order of positions.
+    */
     @Override
     public Iterator<Map.Entry<String, Stack<String>>> iterator() {
         List<Map.Entry<String, Stack<String>>> sortedEntries = new ArrayList<>(
                 this.rep.entrySet());
 
-        // Sort by position name (alphabetical order)
+        // Sort by alphabetical order: would want to make this specific order
+        //(ie qb, hb, fb, wr) but will work on later.
         sortedEntries.sort(Comparator.comparing(Map.Entry::getKey));
 
-        return sortedEntries.iterator(); // Return iterator for sorted list
+        return sortedEntries.iterator();
     }
 
     /**
-     * Returns the size of the whole roster (Probably Not Kernel).
-     *
-     * public final int numPlayers(){ for (Map.Pair<String, Stack<String>> x :
-     * this.rep) { int totalPlayers = 0; totalPlayers += numPosition(x.key()); }
-     * return totalPlayers; }
+     *  Returns the size of the whole roster (Probably Not Kernel).
      */
+     public final int numPlayers() {
+        int totalPlayers = 0;
+        for (Map.Pair<String, Stack<String>> x :this.rep) {
+            int totalPlayers = 0;
+            totalPlayers += numPosition(x.key());
+        }
+        return totalPlayers;
+    }
     /**
      * Main Method.
      *
@@ -152,8 +122,7 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
         /**
          * Create a depth chart and give it players Consider a new way to add
          * players in bulk because this is very tedious, perhaps input a String
-         * array and have it insert all of those names into a position Also
-         * consider building an iterator for DepthChart
+         * array and have it insert all of those names into a position
          */
         DepthChart myTeam = new DepthChart();
         myTeam.addPlayer("Caleb Williams", "qb");
