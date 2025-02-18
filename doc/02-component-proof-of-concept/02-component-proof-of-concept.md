@@ -144,8 +144,6 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
-
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
 Here's what I would expect to see at the minimum:
@@ -163,11 +161,11 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
-- Designed a proof of concept for <!-- insert name of component here --> component
+- Designed a proof of concept for Depth Chart component
 
 ### Updated
 
-- Changed design to include ...
+- Changed design to include addPlayer, removePlayer, numPosition, numPlayers, and iterable methods
 
 ```
 
