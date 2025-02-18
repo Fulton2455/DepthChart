@@ -160,7 +160,8 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
         System.out.println(wrOnes);
         System.out.println(myTeam.numPosition("wr"));
         myTeam.addPlayer(wrOnes, "wr");
-        System.out.println(myTeam.numPlayers());
+        System.out
+                .println("Number of players on roster: " + myTeam.numPlayers());
         /**
          * //code for printing the starting lineup a secondary method //sure to
          * be included should really build an iterator to help with this
@@ -189,6 +190,7 @@ public class DepthChart implements Iterable<Map.Entry<String, Stack<String>>> {
         //Better way to print all of the first players at each position but
         //need to add logic to account for positions with multiple players that
         //start. Additionally should update the iterator to order by position.
+        System.out.println("\nStarting lineup:");
         for (Map.Entry<String, Stack<String>> entry : myTeam) {
             String player = entry.getValue().pop();
             System.out.println(player);
