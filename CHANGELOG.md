@@ -6,18 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## [Unreleased]
-
-## [2024.12.30]
-
-- Added table-based rubrics to all 6 parts of the project
-- Updated gitignore to exclude more files
-- Fixed image markdown in the interfaces document
-
-## [2024.08.07]
+## 2025.01.31
 
 ### Added
 
+<<<<<<< Updated upstream
 - Added `/bin` to `.gitignore`, so binaries are no longer committed
 - Added the TODO tree extensions to `extensions.json`
 - Added the `todo-tree.general.showActivityBarBadge` setting to `settings.json`
@@ -89,3 +82,8 @@ component
 - Made addPlayer, removePlayer, numPosition, and an iterator for the component
 - Proved functionality by creating a team and then printing the first player at
 each position to show that the starting lineup could be printed
+=======
+- Designed a Depth Chart component
+- Designed a Golf Leaderboard component
+- Designed a PR Tracker component
+>>>>>>> Stashed changes
