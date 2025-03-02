@@ -11,6 +11,7 @@ the following form: YYYY.0M.0D.
 ### Added
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 - Added `/bin` to `.gitignore`, so binaries are no longer committed
 - Added the TODO tree extensions to `extensions.json`
 - Added the `todo-tree.general.showActivityBarBadge` setting to `settings.json`
@@ -82,6 +83,11 @@ component
 - Made addPlayer, removePlayer, numPosition, and an iterator for the component
 - Proved functionality by creating a team and then printing the first player at
 each position to show that the starting lineup could be printed
+=======
+- Designed a Depth Chart component
+- Designed a Golf Leaderboard component
+- Designed a PR Tracker component
+>>>>>>> Stashed changes
 =======
 - Designed a Depth Chart component
 - Designed a Golf Leaderboard component
