@@ -6,12 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## 2025.03.02
+
+### Added
+
+- Designed kernel and enhanced interfaces for DepthChart component
+
 ## 2025.01.31
 
 ### Added
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+
 - Added `/bin` to `.gitignore`, so binaries are no longer committed
 - Added the TODO tree extensions to `extensions.json`
 - Added the `todo-tree.general.showActivityBarBadge` setting to `settings.json`
@@ -67,8 +74,6 @@ the following form: YYYY.0M.0D.
 - Created initial drafts of the six portfolio assessments
 - Added READMEs to key folders like `test` and `lib` to explain their purpose
 
-[unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
-[2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07
 
 ## [2024.01.31]
@@ -87,9 +92,12 @@ each position to show that the starting lineup could be printed
 - Designed a Depth Chart component
 - Designed a Golf Leaderboard component
 - Designed a PR Tracker component
+
 >>>>>>> Stashed changes
 =======
+
 - Designed a Depth Chart component
 - Designed a Golf Leaderboard component
 - Designed a PR Tracker component
+
 >>>>>>> Stashed changes
