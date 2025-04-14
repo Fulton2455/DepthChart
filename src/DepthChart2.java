@@ -12,7 +12,7 @@ public class DepthChart2 extends DepthChartSecondary {
     /**
      * Representation of this.
      */
-    private Map<String, Stac<String>> rep;
+    private Map<String, Stack<String>> rep;
 
     /**
      * Ordered list for iterator.
