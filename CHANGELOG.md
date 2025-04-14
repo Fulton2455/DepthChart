@@ -6,19 +6,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## 2025.03.02
-
-### Added
-
-- Designed kernel and enhanced interfaces for DepthChart component
-
-## 2025.01.31
-
-### Added
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
 - Added `/bin` to `.gitignore`, so binaries are no longer committed
 - Added the TODO tree extensions to `extensions.json`
 - Added the `todo-tree.general.showActivityBarBadge` setting to `settings.json`
