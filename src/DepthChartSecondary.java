@@ -3,7 +3,7 @@
  */
 public abstract class DepthChartSecondary implements DepthChart {
 
-    @override
+    @Override
     int numPlayers() {
         int result = 0;
         //Loop through using iterator from Kernel Implementation
@@ -173,15 +173,11 @@ public abstract class DepthChartSecondary implements DepthChart {
             System.out.println(lb);
             lbArray[i] = lb;
             i++;
-        }
-        for (int j = lbArray.length - 1; j >= 0; j--) {
-            this.addPlayer(lbArray[j], "lb");
-        }
-    }else
+        }for(
+    int j = lbArray.length - 1;j>=0;j--)
     {
-        System.out.println(
-                "Error, you do not have the number of LBs necessary to print this personnel");
-    }
+        this.addPlayer(lbArray[this.j], "lb");
+    }}else{System.out.println("Error, you do not have the number of LBs necessary to print this personnel");}
     int numCBs = 0;if(personnel.equals("baseFourThree"))
     {
         this.numCBs
@@ -200,40 +196,31 @@ public abstract class DepthChartSecondary implements DepthChart {
             System.out.println(cb);
             cbArray[i] = cb;
             i++;
-        }
-        for (int j = cbArray.length - 1; j >= 0; j--) {
-            this.addPlayer(cbArray[j], "cb");
-        }
-    }else
+        }for(
+    int j = cbArray.length - 1;j>=0;j--)
     {
-        System.out.println(
-                "Error, you do not have the number of LBs necessary to print this personnel");
-    }
+        this.addPlayer(cbArray[this.j], "cb");
+    }}else{System.out.println("Error, you do not have the number of LBs necessary to print this personnel");}
     //Will just make it two safeties instead of fs and ss.
-    if(this.numPosition("s")>=2)
+    if(this.numPosition("s")>=2){
+    int i = 0;
+    String[] sArray = new String[2];while(i<2)
     {
-        int i = 0;
-        String[] sArray = new String[2];
-        while (i < 2) {
-            String s = this.removePlayer("s");
-            System.out.println(s);
-            sArray[i] = s;
-            i++;
-        }
-        for (int j = sArray.length - 1; j >= 0; j--) {
-            this.addPlayer(sArray[j], "s");
-        }
-    }else
+        String s = this.removePlayer("s");
+        System.out.println(s);
+        this.sArray[i] = s;
+        i++;
+    }for(
+    int j = this.sArray.length - 1;j>=0;j--)
     {
-        System.out.println(
-                "Error, you do not have the number of IDLs necessary to print this personnel");
-    }
-    }
+            this.addPlayer(this.sArray[this.j], "s");
+        }
+    }else{System.out.println("Error, you do not have the number of IDLs necessary to print this personnel");}}
 
     @Override
-        void addPlayers(String[] players, String position) {
-            for (int i = 0; i < players.length; i++) {
-                this.addPlayer(players[i], position);
-            }
+    void addPlayers(String[] players, String position) {
+        for (int i = 0; i < players.length; i++) {
+            this.addPlayer(players[i], position);
         }
+    }
 }
