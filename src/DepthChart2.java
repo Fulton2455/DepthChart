@@ -66,4 +66,42 @@ public class DepthChart2 extends DepthChartSecondary {
             }
         };
     }
+
+    @Override
+    public final DepthChart newInstance() {
+        try {
+            return this.getClass().getConstructor().newInstance();
+        } catch (ReflectiveOperationException e) {
+            throw new AssertionError(
+                    "Cannot construct object of type " + this.getClass());
+        }
+    }
+
+    /**
+     * Creates intitial representation.
+     */
+    private void createNewRep() {
+        this.rep = new Map<String, Stack<String>>;
+    }
+
+    @Override
+    public final void clear() {
+        this.createNewRep();
+    }
+
+    @Override
+    public final void transferFrom(DepthChart source) {
+        assert source != null : "Violation of: source is not null";
+        assert source != this : "Violation of: source is not this";
+        assert source instanceof NaturalNumber3 : ""
+                + "Violation of: source is of dynamic type NaturalNumberExample";
+        /*
+         * This cast cannot fail since the assert above would have stopped
+         * execution in that case.
+         */
+        DepthChart localSource = (DepthChart2) source;
+        this.rep = localSource.rep;
+        localSource.createNewRep();
+    }
+
 }
