@@ -3,7 +3,7 @@
  */
 public abstract class DepthChartSecondary implements DepthChart {
 
-    @override
+    @Override
     int numPlayers() {
         int result = 0;
         //Loop through using iterator from Kernel Implementation
@@ -28,7 +28,7 @@ public abstract class DepthChartSecondary implements DepthChart {
         if (this.numPosition("qb") > 0) {
             String qb = this.removePlayer("qb");
             System.out.println(qb);
-            this.addPlayer(qb,
+            this.addPlayer(qb)
         } else {
             System.out.println(
                     "Error, you do not have the number of qbs necessary to print this personnel.");
@@ -45,7 +45,7 @@ public abstract class DepthChartSecondary implements DepthChart {
                 i++;
             }
             for (int j = hbArray.length - 1; j >= 0; j--) {
-                this.addPlayer(hbArray[j],
+                this.addPlayer(hbArray[j]);
             }
         } else {
             System.out.println(
@@ -63,7 +63,7 @@ public abstract class DepthChartSecondary implements DepthChart {
                 i++;
             }
             for (int j = wrArray.length - 1; j >= 0; j--) {
-                this.addPlayer(wrArray[j],
+                this.addPlayer(wrArray[j]);
             }
         } else {
             System.out.println(
@@ -173,15 +173,11 @@ public abstract class DepthChartSecondary implements DepthChart {
             System.out.println(lb);
             lbArray[i] = lb;
             i++;
-        }
-        for (int j = lbArray.length - 1; j >= 0; j--) {
-            this.addPlayer(lbArray[j], "lb");
-        }
-    }else
+        }for(
+    int j = lbArray.length - 1;j>=0;j--)
     {
-        System.out.println(
-                "Error, you do not have the number of LBs necessary to print this personnel");
-    }
+        this.addPlayer(lbArray[this.j], "lb");
+    }}else{System.out.println("Error, you do not have the number of LBs necessary to print this personnel");}
     int numCBs = 0;if(personnel.equals("baseFourThree"))
     {
         this.numCBs
@@ -200,40 +196,71 @@ public abstract class DepthChartSecondary implements DepthChart {
             System.out.println(cb);
             cbArray[i] = cb;
             i++;
-        }
-        for (int j = cbArray.length - 1; j >= 0; j--) {
-            this.addPlayer(cbArray[j], "cb");
-        }
-    }else
+        }for(
+    int j = cbArray.length - 1;j>=0;j--)
     {
-        System.out.println(
-                "Error, you do not have the number of LBs necessary to print this personnel");
-    }
+        this.addPlayer(cbArray[this.j], "cb");
+    }}else{System.out.println("Error, you do not have the number of LBs necessary to print this personnel");}
     //Will just make it two safeties instead of fs and ss.
-    if(this.numPosition("s")>=2)
+    if(this.numPosition("s")>=2){
+    int i = 0;
+    String[] sArray = new String[2];while(i<2)
     {
-        int i = 0;
-        String[] sArray = new String[2];
-        while (i < 2) {
-            String s = this.removePlayer("s");
-            System.out.println(s);
-            sArray[i] = s;
-            i++;
-        }
-        for (int j = sArray.length - 1; j >= 0; j--) {
-            this.addPlayer(sArray[j], "s");
-        }
-    }else
+        String s = this.removePlayer("s");
+        System.out.println(s);
+        this.sArray[i] = s;
+        i++;
+    }for(
+    int j = this.sArray.length - 1;j>=0;j--)
     {
-        System.out.println(
-                "Error, you do not have the number of IDLs necessary to print this personnel");
-    }
+            this.addPlayer(this.sArray[this.j], "s");
+        }
+    }else{System.out.println("Error, you do not have the number of IDLs necessary to print this personnel");}}
+
+    @Override
+    void addPlayers(String[] players, String position) {
+        for (int i = 0; i < players.length; i++) {
+            this.addPlayer(players[i], position);
+        }
     }
 
     @Override
-        void addPlayers(String[] players, String position) {
-            for (int i = 0; i < players.length; i++) {
-                this.addPlayer(players[i], position);
+    String toString() {
+        //Print one player from each position
+        String result = "";
+        for (String position : this) {
+            if (numPosition(position) > 0) {
+                String player = this.removePlayer(position);
+                result += player + " ";
+                this.addPlayer(player, position);
             }
         }
+
+        return result;
+
+    }
+
+    @Override
+    boolean equals(DepthChart x) {
+        boolean result = true;
+        for (String position : this) {
+            if (!(x.numPosition(position) == this.numPosition(position))) {
+                result = false;
+                break;
+            }
+            int i = 0;
+            String[] players = new String[this.numPosition(position)];
+            String[] xPlayers = new String[x.numPosition(position)];
+            while (this.numPosition(position) > 0) {
+                String player = this.removePlayer();
+                String xPlayer = x.removePlayer();
+                players[i] = player;
+                xPlayers[i] = xPlayer;
+                i++;
+            }
+            result = xPlayers.equals(players);
+        }
+        return result;
+    }
+
 }
