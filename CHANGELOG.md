@@ -83,6 +83,16 @@ the following form: YYYY.0M.0D.
 
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07
 
+## 2025.04.09
+
+### Added
+
+- Designed kernel implementation for Depth Chart component
+
+### Updated
+
+- Changed design to include constructor, kernel methods, and iterator
+
 ## [2024.01.31]
 
 - Completed component brainstorming
