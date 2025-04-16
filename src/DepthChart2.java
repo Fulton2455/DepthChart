@@ -1,4 +1,9 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Stack;
 
 /*Convention:-Each key in{@code re
  * } corresponds  The order of players in the stack for each position represents
@@ -7,7 +12,7 @@ import java.util.*;
  * (e.g., "qb", "wr") to a depth-ordered stack of player names (most recent
  * addition = starter).
  */
-public class DepthChart2 extends DepthChartSecondary {
+public class DepthChart2 implements DepthChartKernel {
 
     /**
      * Representation of this.

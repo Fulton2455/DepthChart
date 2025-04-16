@@ -7,11 +7,6 @@ import java.util.Stack;
 public interface DepthChartKernel extends Standard<DepthChart> {
 
     /**
-     * No argument constructor creates an empty depth chart.
-     */
-    void DepthChart();
-
-    /**
      * Adds player as starter in position.
      *
      * @param player
