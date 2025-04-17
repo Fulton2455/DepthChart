@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -5,14 +6,15 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
-/*Convention:-Each key in{@code re
- * } corresponds  The order of players in the stack for each position represents
- *  their depth chart ranking:the player
+/**
+ * Convention:-Each key in{@code rep} corresponds The order of players in
+ * the stack for each position represents their depth chart ranking:
+ * the player.
  * Correpondence: A DepthChart2 represents a mapping from position strings
- * (e.g., "qb", "wr") to a depth-ordered stack of player names (most recent
- * addition = starter).
+ * (e.g., "qb", "wr") to a depth-ordered stack of player names
+ * (most recent addition = starter).
  */
-public class DepthChart2 implements DepthChartKernel {
+public class DepthChart2 extends DepthChartSecondary {
 
     /**
      * Representation of this.
@@ -22,11 +24,13 @@ public class DepthChart2 implements DepthChartKernel {
     /**
      * Ordered list for iterator.
      */
-    static final List<String> ORDERED_POSITIONS = List.of("qb", "hb", "fb",
-            "wr", "te", "ot", "og", "c", "dt", "de", "ilb", "olb", "cb", "fs",
+    static final List<String> ORDERED_POSITIONS = Arrays.asList("qb", "hb", "fb",
+            "wr", "te", "ot", "og", "c", "edge", "idl", "ilb", "olb", "cb", "fs",
             "ss", "k", "p", "ls");
 
-    @Override
+    /**
+     * Constructor for depth chart.
+     */
     public DepthChart2() {
         this.rep = new HashMap<>();
         for (String position : ORDERED_POSITIONS) {
@@ -53,21 +57,21 @@ public class DepthChart2 implements DepthChartKernel {
      * Need to update interface to reflect this.
      */
     @Override
-    public Iterator<String> orderedPositionIterator() {
-        return new Iterator<>() {
+    public final Iterator<String> orderedPositionIterator() {
+        return new Iterator<String>() {
             private int index = 0;
 
             @Override
             public boolean hasNext() {
-                return index < ORDERED_POSITIONS.size();
+                return this.index < ORDERED_POSITIONS.size();
             }
 
             @Override
             public String next() {
-                if (!hasNext()) {
+                if (!this.hasNext()) {
                     throw new NoSuchElementException();
                 }
-                return ORDERED_POSITIONS.get(index++);
+                return ORDERED_POSITIONS.get(this.index++);
             }
         };
     }
@@ -75,7 +79,7 @@ public class DepthChart2 implements DepthChartKernel {
     @Override
     public final DepthChart newInstance() {
         try {
-            return this.getClass().getConstructor().newInstance();
+            return (DepthChart) this.getClass().getConstructor().newInstance();
         } catch (ReflectiveOperationException e) {
             throw new AssertionError(
                     "Cannot construct object of type " + this.getClass());
@@ -86,7 +90,10 @@ public class DepthChart2 implements DepthChartKernel {
      * Creates intitial representation.
      */
     private void createNewRep() {
-        this.rep = new Map<String, Stack<String>>;
+        this.rep = new HashMap<String, Stack<String>>();
+        for (String position : ORDERED_POSITIONS) {
+            this.rep.put(position, new Stack<>());
+        }
     }
 
     @Override
@@ -98,13 +105,13 @@ public class DepthChart2 implements DepthChartKernel {
     public final void transferFrom(DepthChart source) {
         assert source != null : "Violation of: source is not null";
         assert source != this : "Violation of: source is not this";
-        assert source instanceof NaturalNumber3 : ""
+        assert source instanceof DepthChart2 : ""
                 + "Violation of: source is of dynamic type NaturalNumberExample";
         /*
          * This cast cannot fail since the assert above would have stopped
          * execution in that case.
          */
-        DepthChart localSource = (DepthChart2) source;
+        DepthChart2 localSource = (DepthChart2) source;
         this.rep = localSource.rep;
         localSource.createNewRep();
     }

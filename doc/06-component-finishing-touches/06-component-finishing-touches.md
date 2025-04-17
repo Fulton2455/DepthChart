@@ -139,8 +139,6 @@ to see them. If you don't like this workflow, you may try following the
 rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
 
-<!-- TODO: make a new branch from main then delete this comment -->
-
 ## Assignment Tasks
 
 Your primary task for this assignment is to polish up your code and get it
@@ -305,18 +303,18 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+I feel like I have a better understanding of the process because it was nice to start with a blank slate and determine every aspect of how I would organize my code. I think starting from a completely blank slate was very informative for me.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+It showed me that I did not entirely know how github worked when the pull requests weren't merged from the first couple of parts. It was a little off putting writing the kernal and abstract classes without the interfaces in the same src folder. I watched a couple of videos and feel like I understand it better than before and merged all the pull requests so that it is easier to catch mistakes.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+I thoroughly enjoyed designing my own solution to my own problem. A part of why I chose computer science was that it was open ended in what problems I could solve in the field. The portfolio project showed me that I wanted to get serious about software development and begin to develop more projects to include in my portfolio.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -324,25 +322,25 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+I had to learn more about how github worked to effectively complete the project. It made things like the change log hard to understand because the changes that I had put in there from other parts were not present until they were all merged.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+Version Control
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+I would certainly be interested in developing in an industry that allowed me to develop programs for sports related components. I have always enjoyed sports and I always will.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+I currently want to spend some time in the software development industry before branching off to create my own startup. I would certainly feel comfortable reaching out to Jeremy if I needed help in a software sense, but would also reach out to several formal coaches if I need more general, life mentorship.
 
 ### Changelog
 
