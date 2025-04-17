@@ -1,5 +1,6 @@
-import java.util.Map;
-import java.util.Stack;
+package components.depthchart;
+
+import java.util.Iterator;
 
 /**
  * DepthChartKernel Interface.
@@ -48,9 +49,8 @@ public interface DepthChartKernel extends Standard<DepthChart> {
     /**
      * Cutom iterator that prints the positions in order (qb, rb, fb, wr, etc.).
      *
-     * @param depthChart
-     *            the DepthChart to iterate over
+     * @return Iterator<String> an iterator over each of the positins in this.
      *
      */
-    void depthChartIterator(Map<String, Stack<String>> depthChart);
+    Iterator<String> orderedPositionIterator();
 }

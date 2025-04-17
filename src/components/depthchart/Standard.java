@@ -1,3 +1,4 @@
+package components.depthchart;
 /**
  * Custom Standard interface (based off of OSU Standard).
  *
@@ -40,7 +41,7 @@ public interface Standard<T> {
      * no-argument constructor for T. If T does not have a no-argument
      * constructor, then the value of the new returned object satisfies the
      * contract of the constructor call that was used to initialize this .
-     * 
+     *
      * @return new object "like" this with an initial value
      * @ensures is_initial(newInstance)
      */
