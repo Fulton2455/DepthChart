@@ -1,3 +1,4 @@
+package components.depthchart;
 /**
  * Custom Standard interface (based off of OSU Standard).
  *

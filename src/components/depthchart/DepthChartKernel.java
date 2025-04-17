@@ -1,3 +1,5 @@
+package components.depthchart;
+
 import java.util.Iterator;
 
 /**

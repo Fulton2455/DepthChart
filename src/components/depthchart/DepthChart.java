@@ -1,3 +1,5 @@
+package components.depthchart;
+
 /**
  * DepthChart interface.
  */
